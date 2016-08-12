@@ -1,6 +1,13 @@
 FROM node:6-slim
 
+RUN apt-get update && apt-get install -y git \
+    --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN npm install matrix-appservice-irc --global
 
-ENTRYPOINT matrix-appservice-irc
+# workaround for not found lib/config/schema.yaml
+WORKDIR /usr/local/lib/node_modules/matrix-appservice-irc
+
+ENTRYPOINT [  "matrix-appservice-irc" ]
 
