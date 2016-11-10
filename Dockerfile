@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y git \
     --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
-ARG VERSION=0.4.0
+ARG VERSION=0.6.0
 
 RUN npm install matrix-appservice-irc@$VERSION --global
 
