@@ -9,6 +9,4 @@ then
 
 fi
 
-
-
-exec matrix-appservice-irc
+exec matrix-appservice-irc $@
