@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y git sipcalc make gcc libc6-dev \
     --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
-ARG VERSION=0.7.0
+ARG VERSION=0.8.0
 
 RUN npm install matrix-appservice-irc@$VERSION --global
 
